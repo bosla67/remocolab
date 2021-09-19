@@ -145,6 +145,7 @@ def _setupSSHDImpl(public_key, tunnel, ngrok_token, ngrok_region, mount_gdrive_t
 
   #Prevent ssh session disconnection.
   with open("/etc/ssh/sshd_config", "a") as f:
+    print('#Edit /etc/ssh/sshd_config')
     f.write("\n\n# Options added by remocolab\n")
     f.write("ClientAliveInterval 120\n")
     if public_key != None:
